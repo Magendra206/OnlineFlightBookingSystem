@@ -12,8 +12,10 @@ import { FlightDetailsComponent } from './flight-details/flight-details.componen
 import { FlightsComponent } from './flights/flights.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
+import { ForgetPasswordComponent } from './login/forget-password/forget-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-// import { FormsModule } from '@angular/forms';
+//  import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { UserComponent } from './user/user.component';
     FlightBookingComponent,
     FlightDetailsComponent,
     FlightsComponent,
-    UserComponent
+    UserComponent,
+    ForgetPasswordComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [],

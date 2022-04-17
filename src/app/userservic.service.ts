@@ -15,5 +15,10 @@ import { Observable } from "rxjs";
     getAllUsers():Observable<any>{
       return this.http.get(`${this.baseUrl}`);
     } 
+    addUser(user: Object): Observable<Object>
+  {
+    return this.http.post(`${this.baseUrl}`, user);
+  }
+
   
   }

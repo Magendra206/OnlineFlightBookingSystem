@@ -1,7 +1,87 @@
 <p>users works!</p>
-<app-user></app-user>
+<!-- <app-user></app-user> -->
 
-<section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class="card">
+  <div class="card-body">
+      <h4>Register Form</h4>
+      <div class="alert alert-info alert-dismissible " role="alert" *ngIf="formSubmitted">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <span class="sr-only">Close</span>
+          </button>
+          <strong>You registered successfully! </strong><a routerLink="/login">Back to Login page</a>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <form [formGroup]="registerForm" novalidate >
+                  <div class="form-group">
+                      <label>Name</label>
+                      <input type="text" class="form-control" formControlName="name" 
+                      [ngClass]="{'is-invalid':name.errors && (name.touched || name.dirty), 'is-valid': name.valid}" />
+                      <div class="invalid-feedback">
+                          <strong>First name is required.</strong>
+                      </div>
+                  </div>
+                  <!-- <div class="form-group">
+                      <label>Last Name</label>
+                      <input type="text" class="form-control" formControlName="lastName" 
+                      [ngClass]="{'is-invalid':lastName.errors && (lastName.touched || lastName.dirty), 'is-valid': lastName.valid}" />
+                      <div class="invalid-feedback">
+                          <strong>Last name is required.</strong>
+                      </div>
+                  </div> -->
+                  <div class="form-group">
+                      <label>Email</label>
+                      <input type="email" class="form-control" formControlName="email" 
+                      [ngClass]="{'is-invalid':email.errors && (email.touched || email.dirty), 'is-valid': email.valid}" />
+                      <div class="invalid-feedback">
+                          <strong>Email is required.</strong>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>Address</label>
+                      <input type="text" class="form-control" formControlName="address" 
+                      [ngClass]="{'is-invalid':address.errors && (address.touched || address.dirty), 'is-valid': address.valid}" />
+                      <div class="invalid-feedback">
+                          <strong>Address is required.</strong>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label>phoneNo</label>
+                      <input type="number" class="form-control" formControlName="phoneno" 
+                      [ngClass]="{'is-invalid': phone_no.errors && (phone_no.touched || phone_no.dirty), 'is-valid': phone_no.valid}" />
+                      <div class="invalid-feedback">
+                          <strong *ngIf="phone_no.errors?.['required']">Password is required.</strong>
+                          <strong *ngIf="phone_no.errors?.['minlength']">Password length must be greater than {{phone_no.errors?.['minlength'].requiredLength}} characters.</strong>
+                      </div>
+                  </div>
+                  <!-- <div class="form-group">
+                      <label>Role</label>
+                      <select class="form-control" formControlName="role">
+                          <option *ngFor="let r of roles">{{r}}</option>
+                      </select>
+                  </div>
+                  <div class="form-group" *ngIf="role.value == 'vendor'">
+                      <label>Food Specialization</label>
+                      <input type="text" class="form-control" 
+                      formControlName="foodSpecialization" 
+                      placeholder="ex: fast food, India food, Asian food, etc" 
+                      [ngClass]="{'is-invalid': foodSpecialization.errors && (foodSpecialization.touched || foodSpecialization.dirty), 'is-valid': foodSpecialization.valid}" />
+                      <div class="invalid-feedback">
+                          <strong>Food Specialization is required.</strong>
+                      </div>
+                  </div> -->
+                  <button type="submit" class="btn btn-primary" (click)="onSubmit()">Register</button>
+                  <button class="btn btn-default" (click)="registerForm.reset()">Reset</button>
+                  <a routerLink="/login" class="btn btn-link">Cancel</a>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<!-- <section class="vh-100 bg-image" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
@@ -58,4 +138,4 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
