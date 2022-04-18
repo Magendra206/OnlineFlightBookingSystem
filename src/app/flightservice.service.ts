@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class FlightService {
+  [x: string]: any;
 
   constructor(private http:HttpClient) { }
 
@@ -15,5 +16,8 @@ export class FlightService {
   getAllFlight():Observable<any>{
     return this.http.get(`${this.baseUrl}`);
   } 
+  getFlight(flightId:number):Observable<any>{
+    return this.http.get(`${this.baseUrl}/${flightId}`);
+  }
 
 }

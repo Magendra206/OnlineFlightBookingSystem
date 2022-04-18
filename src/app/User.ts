@@ -1,6 +1,6 @@
 export class User{
     constructor() { }
-    public phone_no:number=0;
+    public phone_no:string='';
     public name:string='';
     public email:string='';
     public address:string='';

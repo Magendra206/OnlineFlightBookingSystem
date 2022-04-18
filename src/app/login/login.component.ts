@@ -15,8 +15,8 @@ export class LoginComponent implements OnInit {
   currentUser: User = new User();
   loginForm!: FormGroup;
 
-  name: FormControl = new FormControl();
-  email: FormControl = new FormControl();
+  name!: FormControl;
+  email!: FormControl;
 
   showErrorMessage = false;
 
@@ -29,8 +29,8 @@ export class LoginComponent implements OnInit {
     // this.role = new FormControl('customer');
     this.loginForm = new FormGroup(
       {
-        'username': this.name,
-        'password': this.email,
+        'name': this.name,
+        'email': this.email,
         // 'role': this.role,
       }
     );
@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
 
         this.user.forEach(user => 
           {
-            if (user.name == this.loginForm.get('user')!.value)
+            if (user.name == this.loginForm.get('name')!.value)
             {
               if (user.email == this.loginForm.get('email')!.value)
                 this.currentUser = user;
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         if (this.currentUser == null)
           this.showErrorMessage = true;
         else
-          this.router.navigate(['user',this.currentUser.phone_no]);
+          this.router.navigate(['users',this.currentUser.phone_no]);
         
       });
 

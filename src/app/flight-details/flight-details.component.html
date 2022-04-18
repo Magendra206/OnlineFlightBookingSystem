@@ -1,1 +1,19 @@
 <p>flight-details works!</p>
+<hr>
+<div *ngIf= "flight">
+    <div>
+        <label><b>ID:</b></label> {{flight.flightId}}
+    </div>
+    <div>
+        <label><b>DepartureLoc:</b></label> {{flight.departureLoc}}
+    </div>
+    <div>
+        <label><b>ArrivalLoc:</b></label> {{flight.arrivalLoc}}
+    </div>
+    <div>
+        <label><b>Status:</b></label> {{flight.status}}
+    </div>
+</div>
+<br>
+<br>
+<button (click)="goToFlightList()" class="btn btn-primary">Go To Flight List</button><br>

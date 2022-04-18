@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserComponent } from './user/user.component';
 import { ForgetPasswordComponent } from './login/forget-password/forget-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { UserDetailsComponent } from './users/user-details/user-details.component';
+import { UpdateFlightComponent } from './update-flight/update-flight.component';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 //  import { FormsModule } from '@angular/forms';
 
@@ -28,7 +31,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FlightDetailsComponent,
     FlightsComponent,
     UserComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    HomeComponent,
+    UserDetailsComponent,
+    UpdateFlightComponent
   ],
   imports: [
     BrowserModule,

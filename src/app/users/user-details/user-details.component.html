@@ -1,0 +1,37 @@
+<p>user-details works!</p>
+<!-- <p>customer-details works!</p> -->
+<div class="card">
+    <div class="card-title">
+        <h4>Personal Details</h4>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>PhoneNO</th>
+                    <td>{{user.phone_no}}</td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>{{user.name}}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{user.email}}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{user.address}}</td>
+                </tr>
+                <!-- <tr>
+                    <th>Wallet Balance</th>
+                    <td>{{customer.balance}}</td>
+                </tr> -->
+            </tbody>
+        </table>
+        <button class="btn btn-primary" type="button" (click)="goUpdate()">Edit</button>
+        &nbsp;&nbsp;&nbsp;
+        <button type="button" class="btn btn-primary" (click)="backToPortal()">Back to Portal</button>
+</div>
+
+

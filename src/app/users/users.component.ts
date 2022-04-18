@@ -15,10 +15,10 @@ export class UsersComponent implements OnInit {
 
   registerForm!: FormGroup;
 
-  name: FormControl = new FormControl;
-  email: FormControl = new FormControl;
-  address: FormControl = new FormControl;
-  phone_no: FormControl = new FormControl;
+  name!: FormControl;
+  email!: FormControl;
+  address!: FormControl ;
+  phone_no!: FormControl ;
   // password: FormControl;
   // role: FormControl;
   // foodSpecialization: FormControl;
@@ -40,11 +40,11 @@ export class UsersComponent implements OnInit {
 
     this.registerForm = new FormGroup(
       {
-        'firstName': this.name,
+        'name': this.name,
         // 'lastName': this.lastName,
         'email': this.email,
-        'username': this.address,
-        'password': this.phone_no,
+        'address': this.address,
+        'phone_no': this.phone_no,
         // 'role': this.role,
         // 'foodSpecialization': this.foodSpecialization
       }

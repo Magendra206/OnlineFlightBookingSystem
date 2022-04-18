@@ -1,6 +1,6 @@
 export class Flight{
     constructor(){ }
-    public id:number=0;
+    public flightId:number=0;
     public departureLoc:string='';
     public arrivalLoc:string='';
     public status:string='';
